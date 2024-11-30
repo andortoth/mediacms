@@ -781,6 +781,36 @@ class Media(models.Model):
         return None
 
     @property
+    def slideshow_items(self):
+        slideshow_items = getattr(settings, "SLIDESHOW_ITEMS", 30)
+        if self.media_type != "image":
+            items = []
+        else:
+            qs = Media.objects.filter(listable=True, user=self.user, media_type="image").exclude(id=self.id).order_by('id')[:slideshow_items]
+
+            items = [
+                {
+                    "poster_url": item.poster_url,
+                    "url": item.get_absolute_url(),
+                    "thumbnail_url": item.thumbnail_url,
+                    "title": item.title,
+                    "original_media_url": item.original_media_url,
+                }
+                for item in qs
+            ]
+            items.insert(
+                0,
+                {
+                    "poster_url": self.poster_url,
+                    "url": self.get_absolute_url(),
+                    "thumbnail_url": self.thumbnail_url,
+                    "title": self.title,
+                    "original_media_url": self.original_media_url,
+                },
+            )
+        return items
+
+    @property
     def subtitles_info(self):
         """Property used on serializers
         Returns subtitles info
