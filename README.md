@@ -143,7 +143,7 @@ info@mediacms.io
 * cd to the repository directory
 * Create and activate conda env in Anaconda prompt
 ```powershell
-conda create -name mediacms 
+conda create --name mediacms python=3.10
 conda activate mediacms
 ```
 * Install dependencies
