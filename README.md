@@ -134,3 +134,20 @@ If you like the project, here's a few things you can do
 ## Contact
 
 info@mediacms.io
+
+
+# Astamangala additions
+
+## Install local environment
+* Install **Anaconda** with the **Add Anaconda to my PATH environment variable** option *NOT* checked
+* cd to the repository directory
+* Create and activate conda env in Anaconda prompt
+```powershell
+conda create -name mediacms 
+conda activate mediacms
+```
+* Install dependencies
+```powershell
+pip install pypandoc==1.5
+pip install -r requirements-win-dev.txt
+```
