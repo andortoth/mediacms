@@ -4,6 +4,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 INSTALLED_APPS = [
+    'django_auth_oidc',
     'django.contrib.admin',
     'django.contrib.auth',
     'allauth',
@@ -47,3 +48,4 @@ DEBUG = True
 CORS_ORIGIN_ALLOW_ALL = True
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static/'),)
 STATIC_ROOT = None
+

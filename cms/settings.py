@@ -277,6 +277,31 @@ CKEDITOR_CONFIGS = {
     }
 }
 
+SOCIALACCOUNT_PROVIDERS = {
+    "openid_connect": {
+        # Optional PKCE defaults to False, but may be required by your provider
+        # Can be set globally, or per app (settings).
+        "OAUTH_PKCE_ENABLED": True,
+        "APPS": [
+            {
+                "provider_id": "my-server",
+                "name": "My Login Server",
+                "client_id": "your.service.id",
+                "secret": "your.service.secret",
+                "settings": {
+                    "server_url": "http://127.0.0.1:8000",
+                    # Optional token endpoint authentication method.
+                    # May be one of "client_secret_basic", "client_secret_post"
+                    # If omitted, a method from the the server's
+                    # token auth methods list is used
+                    "token_auth_method": "client_secret_basic",
+                    "oauth_pkce_enabled": True,
+                },
+            },
+
+        ]
+    }
+}
 
 AUTH_USER_MODEL = "users.User"
 LOGIN_REDIRECT_URL = "/"
