@@ -65,6 +65,6 @@ EXPOSE 9000 80
 
 RUN chmod +x ./deploy/docker/entrypoint.sh
 
-ENTRYPOINT ["./deploy/docker/entrypoint.sh"]
+ENTRYPOINT ["/home/mediacms.io/mediacms/deploy/docker/entrypoint.sh"]
 
-CMD ["./deploy/docker/start.sh"]
+CMD ["/home/mediacms.io/mediacms/deploy/docker/start.sh"]
