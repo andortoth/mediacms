@@ -63,7 +63,7 @@ WORKDIR /home/mediacms.io/mediacms
 
 EXPOSE 9000 80
 
-RUN chmod +x ./deploy/docker/entrypoint.sh
+RUN chmod +x /home/mediacms.io/mediacms/deploy/docker/entrypoint.sh
 
 ENTRYPOINT ["/home/mediacms.io/mediacms/deploy/docker/entrypoint.sh"]
 
