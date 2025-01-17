@@ -310,6 +310,7 @@ INSTALLED_APPS = [
     "djcelery_email",
     "ckeditor",
     "drf_yasg",
+    "login_required",
 ]
 
 MIDDLEWARE = [
