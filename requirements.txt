@@ -16,5 +16,5 @@ django-crispy-forms==2.3
 requests==2.32.0
 django-celery-email==3.0.0
 m3u8==3.5.0
-django-ckeditor==6.6.1
+django-ckeditor==6.7.0
 django-debug-toolbar==5.0.1
