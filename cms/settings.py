@@ -459,7 +459,7 @@ LOCAL_INSTALL = False
 
 # this is an option to make the whole portal available to logged in users only
 # it is placed here so it can be overrided on local_settings.py
-GLOBAL_LOGIN_REQUIRED = False
+GLOBAL_LOGIN_REQUIRED = True
 
 # TODO: separate settings on production/development more properly, for now
 # this should be ok
@@ -490,7 +490,7 @@ else:
 
 if GLOBAL_LOGIN_REQUIRED:
     # this should go after the AuthenticationMiddleware middleware
-    MIDDLEWARE.insert(6, "'django.contrib.auth.middleware.LoginRequiredMiddleware',")
+    # MIDDLEWARE.insert(6, "'django.contrib.auth.middleware.LoginRequiredMiddleware',")
     LOGIN_REQUIRED_IGNORE_PATHS = [
         r'/accounts/login/$',
         r'/accounts/logout/$',
