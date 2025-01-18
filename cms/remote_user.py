@@ -1,5 +1,5 @@
-from django.contrib.auth.middleware import RemoteUserMiddleware
+from django.contrib.auth.middleware import PersistentRemoteUserMiddleware
 
 
-class CustomHeaderMiddleware(RemoteUserMiddleware):
+class CustomHeaderMiddleware(PersistentRemoteUserMiddleware):
     header = "HTTP_X_AUTH_USER"
