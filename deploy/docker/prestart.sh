@@ -23,14 +23,18 @@ if [ X"$ENABLE_MIGRATIONS" = X"yes" ]; then
         echo "Created admin user with password: $ADMIN_PASSWORD"
 
     fi
-    echo "RUNNING COLLECTSTATIC"
-
-    python manage.py collectstatic --noinput
 
     # echo "Updating hostname ..."
     # TODO: Get the FRONTEND_HOST from cms/local_settings.py
     # echo "from django.contrib.sites.models import Site; Site.objects.update(name='$FRONTEND_HOST', domain='$FRONTEND_HOST')" | python manage.py shell
 fi
+
+if [ X"$ENABLE_STATIC" = X"yes" ]; then
+  echo "RUNNING COLLECTSTATIC"
+
+  python manage.py collectstatic --noinput
+fi
+
 
 # Setting up internal nginx server
 # HTTPS setup is delegated to a reverse proxy running infront of the application
