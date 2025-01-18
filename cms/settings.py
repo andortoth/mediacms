@@ -319,6 +319,7 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.auth.middleware.LoginRequiredMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "debug_toolbar.middleware.DebugToolbarMiddleware",
@@ -458,7 +459,7 @@ LOCAL_INSTALL = False
 
 # this is an option to make the whole portal available to logged in users only
 # it is placed here so it can be overrided on local_settings.py
-GLOBAL_LOGIN_REQUIRED = True
+GLOBAL_LOGIN_REQUIRED = False
 
 # TODO: separate settings on production/development more properly, for now
 # this should be ok
