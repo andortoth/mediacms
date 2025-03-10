@@ -33,11 +33,12 @@ function popupTopNavItems() {
       }
     }
 
-    items.push({
+    // commented out because of external login
+    /*items.push({
       link: links.signout,
       icon: 'exit_to_app',
       text: translateString('Sign out'),
-    });
+    });*/
   }
 
   return items;
@@ -86,7 +87,8 @@ function popupMiddleNavItems() {
       });
     }
   } else {
-    items.push({
+    // commented out because of external login
+    /*items.push({
       link: links.user.editProfile,
       icon: 'brush',
       text: translateString('Edit profile'),
@@ -97,7 +99,7 @@ function popupMiddleNavItems() {
         link: links.changePassword,
         icon: 'lock',
         text: translateString('Change password'),
-      });
+      });*/
     }
   }
 
