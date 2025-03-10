@@ -86,7 +86,7 @@ function popupMiddleNavItems() {
         },
       });
     }
-  } else {
+  } /*else {
     // commented out because of external login
     /*items.push({
       link: links.user.editProfile,
@@ -99,8 +99,8 @@ function popupMiddleNavItems() {
         link: links.changePassword,
         icon: 'lock',
         text: translateString('Change password'),
-      });*/
-    }
+      });
+    }*/
   }
 
   return items;
